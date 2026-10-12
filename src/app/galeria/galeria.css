@@ -1,0 +1,270 @@
+/* ========= HOME ========= */
+.hero {
+  text-align: center;
+  padding: 60px 20px 30px;
+  background: #fff;
+}
+
+  .hero h1 {
+    margin: 0;
+    font-size: 52px;
+    letter-spacing: 3px;
+    color: #1a1a1a;
+  }
+
+  .hero p {
+    margin-top: 10px;
+    color: #888;
+    font-size: 14px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+  }
+
+.categorias-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 30px 20px 60px;
+}
+
+.categoria-card {
+  position: relative;
+  height: 420px;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  background: #000;
+  transition: transform 0.3s ease;
+}
+
+  .categoria-card:hover {
+    transform: translateY(-6px);
+  }
+
+  .categoria-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.75;
+    transition: opacity 0.4s ease, transform 0.6s ease;
+  }
+
+  .categoria-card:hover img {
+    opacity: 0.95;
+    transform: scale(1.08);
+  }
+
+.categoria-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 40px 30px 30px;
+  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 100%);
+  color: #fff;
+}
+
+  .categoria-overlay h2 {
+    margin: 0 0 8px;
+    font-size: 32px;
+    letter-spacing: 2px;
+  }
+
+  .categoria-overlay p {
+    margin: 0 0 14px;
+    font-size: 14px;
+    opacity: 0.9;
+    line-height: 1.4;
+  }
+
+.ver-mas {
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-bottom: 1px solid #fff;
+  padding-bottom: 3px;
+}
+
+/* ========= VISTA CATEGORÍA ========= */
+.cat-header {
+  text-align: center;
+  padding: 40px 20px 20px;
+  background: #fff;
+}
+
+.btn-volver {
+  display: inline-block;
+  padding: 8px 18px;
+  background: transparent;
+  border: 1px solid #ddd;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 13px;
+  letter-spacing: 1px;
+  color: #555;
+  margin-bottom: 20px;
+  transition: all 0.2s;
+}
+
+  .btn-volver:hover {
+    border-color: #1a1a1a;
+    color: #1a1a1a;
+  }
+
+.cat-header h1 {
+  margin: 0;
+  font-size: 42px;
+  letter-spacing: 4px;
+  color: #1a1a1a;
+  text-transform: uppercase;
+}
+
+.cat-header p {
+  margin-top: 8px;
+  color: #888;
+  font-size: 14px;
+}
+
+.grid-galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+  max-width: 1300px;
+  margin: 30px auto 60px;
+  padding: 0 20px;
+}
+
+/* ========= FOOTER ========= */
+.footer {
+  text-align: center;
+  padding: 40px 20px;
+  background: #1a1a1a;
+  color: #fff;
+  font-size: 13px;
+  letter-spacing: 2px;
+}
+
+/* ========= MODAL ========= */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.92);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.25s ease;
+}
+
+.modal-contenido {
+  background: #fff;
+  border-radius: 10px;
+  max-width: 90%;
+  max-height: 90%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: scaleIn 0.3s ease;
+}
+
+  .modal-contenido img {
+    max-width: 100%;
+    max-height: 70vh;
+    display: block;
+  }
+
+.modal-info {
+  padding: 20px 30px;
+  text-align: center;
+}
+
+.categoria-tag {
+  display: inline-block;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 6px;
+}
+
+.modal-info h2 {
+  margin: 4px 0 8px;
+  font-size: 22px;
+}
+
+.modal-info p {
+  margin: 0 0 16px;
+  color: #666;
+  font-size: 14px;
+}
+
+.modal-info button {
+  padding: 10px 28px;
+  background: #1a1a1a;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+  .modal-info button:hover {
+    background: #333;
+  }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.9);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+/* ========= RESPONSIVE ========= */
+@media (max-width: 700px) {
+  .hero h1 {
+    font-size: 34px;
+  }
+
+  .hero p {
+    font-size: 11px;
+    letter-spacing: 2px;
+  }
+
+  .categoria-card {
+    height: 320px;
+  }
+
+  .categoria-overlay h2 {
+    font-size: 24px;
+  }
+
+  .cat-header h1 {
+    font-size: 28px;
+  }
+
+  .grid-galeria {
+    grid-template-columns: 1fr;
+    padding: 0 12px;
+  }
+}

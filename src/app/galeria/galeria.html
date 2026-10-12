@@ -1,0 +1,53 @@
+<!-- ========= VISTA HOME ========= -->
+<ng-container *ngIf="vistaActual === 'home'">
+  <header class="hero">
+    <h1>Shirley Ortiz</h1>
+    <p>Fotografía Profesional · Portafolio Visual</p>
+  </header>
+
+  <section class="categorias-grid">
+    <div class="categoria-card"
+         *ngFor="let cat of categorias"
+         (click)="entrarCategoria(cat.nombre)">
+      <img [src]="cat.cover" [alt]="cat.nombre">
+      <div class="categoria-overlay">
+        <h2>{{ cat.nombre }}</h2>
+        <p>{{ cat.descripcion }}</p>
+        <span class="ver-mas">Ver galería →</span>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>© 2026 Shirley Ortiz · Fotografía Profesional</p>
+  </footer>
+</ng-container>
+
+<!-- ========= VISTA CATEGORÍA ========= -->
+<ng-container *ngIf="vistaActual !== 'home'">
+  <header class="cat-header">
+    <button class="btn-volver" (click)="volverHome()">← Volver</button>
+    <h1>{{ vistaActual }}</h1>
+    <p *ngIf="categoriaInfo">{{ categoriaInfo.descripcion }}</p>
+  </header>
+
+  <div class="grid-galeria">
+    <app-imagen *ngFor="let img of imagenesDeCategoria"
+                [imagen]="img"
+                (seleccionada)="seleccionarImagen($event)">
+    </app-imagen>
+  </div>
+</ng-container>
+
+<!-- ========= MODAL ========= -->
+<div class="modal" *ngIf="imagenSeleccionada" (click)="cerrarModal()">
+  <div class="modal-contenido" (click)="$event.stopPropagation()">
+    <img [src]="imagenSeleccionada.url" [alt]="imagenSeleccionada.titulo">
+    <div class="modal-info">
+      <span class="categoria-tag">{{ imagenSeleccionada.categoria }}</span>
+      <h2>{{ imagenSeleccionada.titulo }}</h2>
+      <p>{{ imagenSeleccionada.descripcion }}</p>
+      <button (click)="cerrarModal()">Cerrar</button>
+    </div>
+  </div>
+</div>

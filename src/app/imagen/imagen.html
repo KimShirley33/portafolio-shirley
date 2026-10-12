@@ -1,0 +1,7 @@
+<div class="tarjeta-imagen" (click)="alHacerClic()">
+  <img [src]="imagen.url" [alt]="imagen.titulo">
+  <div class="tarjeta-overlay">
+    <h3>{{ imagen.titulo }}</h3>
+    <p *ngIf="imagen.descripcion">{{ imagen.descripcion }}</p>
+  </div>
+</div>
